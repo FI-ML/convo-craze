@@ -1,0 +1,14 @@
+<div id="question" class="flex-grow">
+  <mat-form-field appearance="fill" class="w-full">
+    <mat-icon matPrefix svgIcon="chat"></mat-icon> <!-- left icon -->
+    <mat-icon id="send" matSuffix svgIcon="send" (click)="sendQuestion()"></mat-icon>
+    <textarea matInput #autosize="cdkTextareaAutosize" cdkTextareaAutosize
+              [cdkAutosizeMinRows]="1"
+              [cdkAutosizeMaxRows]="6"
+              [formControl]="questionControl"
+              (keydown.enter)="sendQuestion()"
+              placeholder="Whats your question"
+              class="no-resize">
+        </textarea>
+  </mat-form-field>
+</div>

@@ -1,0 +1,12 @@
+<div class="flex flex-col w-full">
+  <div id="answer" class="flex-grow">
+    <mat-form-field appearance="fill" class="w-full">
+        <textarea matInput #autosize="cdkTextareaAutosize" cdkTextareaAutosize
+                  [cdkAutosizeMinRows]="1"
+                  [cdkAutosizeMaxRows]="24"
+                  [formControl]="controlAnswer"
+                  class="no-resize text-answer">
+        </textarea>
+    </mat-form-field>
+  </div>
+</div>

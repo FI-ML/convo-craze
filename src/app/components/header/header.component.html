@@ -1,0 +1,28 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav"
+               class="h-4/5 mt-24 ml-2 rounded-2xl drop-shadow-2xl" fixedInViewport>
+    <mat-toolbar class="mt-4 bg-white" (click)="newQuestion()">
+      <div class="flex justify-center hover:rounded-2xl hover:bg-gray-200 h-5/6 py-3">
+        <mat-icon id="add" matSuffix svgIcon="add"></mat-icon>
+        <span class="text-center w-full">new question</span>
+      </div>
+
+    </mat-toolbar>
+
+    <div class="flex justify-center">
+      <mat-nav-list class="rounded-2xl">
+        <a mat-list-item href="#">Link 1</a>
+        <a mat-list-item href="#">Link 2</a>
+        <a mat-list-item href="#">Link 3</a>
+      </mat-nav-list>
+    </div>
+    <div class="bottom-0 flex justify-center">
+      <mat-divider></mat-divider>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div>
+      <app-content [sidenav]="sidenav"></app-content>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
