@@ -26,8 +26,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {QuestionComponent} from "./components/content/question/question.component";
-import {AnswerComponent} from "./components/content/answer/answer.component";
 import {ContentComponent} from "./components/content/content.component";
+import {AnswerComponent} from "./components/content/answer/answer.component";
 
 
 @NgModule({

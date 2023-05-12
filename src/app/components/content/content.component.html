@@ -26,11 +26,19 @@
               </app-answer>
             </ng-container>
           </ng-container>
+
+          <ng-container formArrayName="questions">
+            <ng-container *ngFor="let questionControl of questions.controls; let index = index">
+              <mat-card>
+                {{questionControl.value}}
+              </mat-card>
+            </ng-container>
+          </ng-container>
         </div>
       </div>
 
 
-      <div id="question" class="w-4/5 mx-auto mb-4">
+      <div id="question" class="w-4/5 mx-auto ml-14 mb-4 fixed bottom-0">
         <mat-card class="drop-shadow-2xl">
           <app-question class="mx-1 my-2"
                         [formGroup]="formGroup"

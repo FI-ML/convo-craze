@@ -41,20 +41,20 @@ export class QuestionComponent {
     return (<FormControl>this.formGroup.get('question'));
   }
 
+
   sendQuestion(): void {
     const prompt = this.questionControl.value;
 
     if (prompt.length <= this.maxLength) {
+      this.dataService.setQuestion(prompt);
       this.loading = true;
-      /*  this.gptService.sendRequest(prompt, this.maxLength).then(answer => {
-          this.dataService.updateData(answer);
-          this.loading = false;
-        }).catch(err => {
-          this.loading = false;
-        });*/
-      this.dataService.updateData('Ich bin eine antwort')
-      this.loading = false;
-      this.questionControl.setValue('');
+
+      this.gptService.sendRequest(prompt, this.maxLength).then(answer => {
+        this.dataService.setAnswer(answer);
+        this.loading = false;
+      }).catch(err => {
+        this.loading = false;
+      });
     }
   }
 }

@@ -37,19 +37,23 @@ export class ContentComponent implements OnInit, OnDestroy {
         icon.iconName,
         this.domSanitizer.bypassSecurityTrustResourceUrl(icon.iconPath)
       );
-
     });
   }
 
   ngOnInit() {
     this.formGroup = this.getFormGroup();
 
-
-    this.dataService.data$
+    this.dataService.answerObservable
       .pipe(takeUntil(this.destroy$)) // use takeUntil to unsubscribe
       .subscribe(answer => {
         this.addAnswer(answer)
       });
+
+    this.dataService.questionObservable
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(question => {
+        this.addQuestion(question);
+      })
   }
 
   ngOnDestroy() {
@@ -60,6 +64,8 @@ export class ContentComponent implements OnInit, OnDestroy {
   getFormGroup(): FormGroup {
     return this.formBuilder.group({
       answers: this.formBuilder.array([]),
+
+      questions: this.formBuilder.array([]),
 
       question: new FormControl({
         value: this.question,
@@ -72,16 +78,24 @@ export class ContentComponent implements OnInit, OnDestroy {
   get answers(): FormArray {
     return this.formGroup.get("answers") as FormArray
   }
-  
+
+  get questions(): FormArray {
+    return this.formGroup.get("questions") as FormArray
+  }
 
   addAnswer(answer: string) {
     const answerGroup = this.formBuilder.control({
       value: answer,
       disabled: false
     }, []);
-
-
     this.answers.push(answerGroup);
   }
 
+  addQuestion(question: string) {
+    const answerGroup = this.formBuilder.control({
+      value: question,
+      disabled: false
+    }, []);
+    this.answers.push(answerGroup);
+  }
 }
