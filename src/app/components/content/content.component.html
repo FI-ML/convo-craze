@@ -1,0 +1,38 @@
+<form [formGroup]="formGroup">
+  <div class="grid grid-cols-1 h-screen"> <!-- main container with one column -->
+    <div class="flex flex-col w-full mx-auto"> <!-- chat area with vertical scroll and no max width -->
+      <div class="flex flex-col flex-grow p-4 space-y-4 w-full mx-auto ">
+        <mat-toolbar class="flex bg-sky-900 font-semibold text-lg italic text-white rounded-2xl">
+          <div class="flex flex-row space-x-4">
+            <div>
+              <button mat-icon-button class="hover:border-solid border-inherit" (click)="sidenav.toggle()">
+                <mat-icon *ngIf="!sidenav.opened" svgIcon="row-right">
+                </mat-icon>
+                <mat-icon *ngIf="sidenav.opened" svgIcon="row-left">
+                </mat-icon>
+              </button>
+            </div>
+            <div class="mt-1.5">
+              <span>convo-craze</span>
+            </div>
+          </div>
+        </mat-toolbar>
+        <div id="answer" class="flex flex-col flex-grow p-4 space-y-4 w-4/5 mx-auto ">
+          <app-answer
+            [formGroup]="formGroup">
+          </app-answer>
+        </div>
+      </div>
+
+
+      <div id="question" class="w-4/5 mx-auto mb-4">
+        <mat-card class="rounded-2xl drop-shadow-2xl">
+          <app-question class="mx-1 my-2"
+                        [formGroup]="formGroup"
+                        [maxLength]="maxLength">
+          </app-question>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</form>

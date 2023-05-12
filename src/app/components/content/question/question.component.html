@@ -1,7 +1,8 @@
 <div id="question" class="flex-grow">
   <mat-form-field appearance="fill" class="w-full">
     <mat-icon matPrefix svgIcon="chat"></mat-icon> <!-- left icon -->
-    <mat-icon id="send" matSuffix svgIcon="send" (click)="sendQuestion()"></mat-icon>
+    <mat-icon id="send" matSuffix svgIcon="send" (click)="sendQuestion()" *ngIf="!loading"></mat-icon>
+    <mat-icon id="loading" matSuffix svgIcon="loading" (click)="sendQuestion()" *ngIf="loading"></mat-icon>
     <textarea matInput #autosize="cdkTextareaAutosize" cdkTextareaAutosize
               [cdkAutosizeMinRows]="1"
               [cdkAutosizeMaxRows]="6"
@@ -10,5 +11,6 @@
               placeholder="Whats your question"
               class="no-resize">
         </textarea>
+    <mat-hint align="end">{{questionControl.value.length}} / {{maxLength}}</mat-hint>
   </mat-form-field>
 </div>

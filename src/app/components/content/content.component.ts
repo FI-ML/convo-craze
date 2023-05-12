@@ -1,9 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {MatIconRegistry} from "@angular/material/icon";
 import {DomSanitizer} from "@angular/platform-browser";
-import {IconService} from "../../../service/icon/icon.service";
+
 import {MatSidenav} from "@angular/material/sidenav";
+import {IconService} from "../../service/icon/icon.service";
 
 @Component({
   selector: 'app-content',
@@ -17,6 +18,9 @@ export class ContentComponent implements OnInit {
   answer!: string;
   question: string = '';
   isAnswerExist = false;
+  maxLength: number = 4000;
+  loading: boolean = false;
+
 
   constructor(private readonly formBuilder: FormBuilder,
               private readonly matIconRegistry: MatIconRegistry,
@@ -42,7 +46,7 @@ export class ContentComponent implements OnInit {
       answer: new FormControl({
         value: this.answer,
         disabled: true
-      }, []),
+      }, [Validators.maxLength(this.maxLength)]),
 
       question: new FormControl({
         value: this.question,

@@ -18,15 +18,16 @@ import {LayoutModule} from '@angular/cdk/layout';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-import {AnswerComponent} from "./components/header/content/answer/answer.component";
-import {QuestionComponent} from "./components/header/content/question/question.component";
-import {ContentComponent} from "./components/header/content/content.component";
+
 
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
+import {QuestionComponent} from "./components/content/question/question.component";
+import {AnswerComponent} from "./components/content/answer/answer.component";
+import {ContentComponent} from "./components/content/content.component";
 
 
 @NgModule({

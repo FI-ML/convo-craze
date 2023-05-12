@@ -1,7 +1,8 @@
 import {Component, Input, OnDestroy} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import {DataService} from "../../../../service/data/data.service";
+
 import {Subject, takeUntil} from "rxjs";
+import {DataService} from "../../../service/data/data.service";
 
 @Component({
   selector: 'app-answer',

@@ -4,8 +4,9 @@ import {MatIconRegistry} from "@angular/material/icon";
 import {DomSanitizer} from "@angular/platform-browser";
 
 import {Component, Input} from "@angular/core";
-import {DataService} from "../../../../service/data/data.service";
-import {IconService} from "../../../../service/icon/icon.service";
+import {GptService} from "../../../service/gpt/gpt.service";
+import {DataService} from "../../../service/data/data.service";
+import {IconService} from "../../../service/icon/icon.service";
 
 @Component({
   selector: 'app-question',
@@ -15,9 +16,13 @@ import {IconService} from "../../../../service/icon/icon.service";
 export class QuestionComponent {
 
   @Input() formGroup!: FormGroup;
+  @Input() maxLength!: number;
+  loading: boolean = false;
   question: string = '';
 
+
   constructor(private readonly formBuilder: FormBuilder,
+              private readonly gptService: GptService,
               private readonly domSanitizer: DomSanitizer,
               private readonly matIconRegistry: MatIconRegistry,
               private readonly dataService: DataService,
@@ -37,6 +42,16 @@ export class QuestionComponent {
   }
 
   sendQuestion(): void {
-    this.dataService.updateData(this.questionControl.value);
+    const prompt = this.questionControl.value;
+
+    if (prompt.length <= this.maxLength) {
+      this.loading = true;
+      this.gptService.sendRequest(prompt, this.maxLength).then(answer => {
+        this.dataService.updateData(answer);
+        this.loading = false;
+      }).catch(err => {
+        this.loading = false;
+      });
+    }
   }
 }

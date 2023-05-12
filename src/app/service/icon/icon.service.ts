@@ -55,6 +55,10 @@ export class IconService {
         iconName: 'row-left',
         iconPath: '../assets/row-left.svg',
       },
+      {
+        iconName: 'loading',
+        iconPath: '../assets/loader.svg',
+      },
     ];
     return icons;
   }
