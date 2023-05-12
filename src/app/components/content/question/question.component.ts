@@ -52,6 +52,8 @@ export class QuestionComponent {
       }).catch(err => {
         this.loading = false;
       });
+
+      this.questionControl.setValue('');
     }
   }
 }
