@@ -11,6 +11,8 @@ import {IconService} from "../../service/icon/icon.service";
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.scss']
 })
+
+//TODO: FORM CONTROL ARRAY
 export class ContentComponent implements OnInit {
   @Input() sidenav!: MatSidenav;
 

@@ -2,11 +2,6 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you
-change any of the source files.
-
 ***
 
 ## API KEY
@@ -20,3 +15,15 @@ export class Env {
 ````
 
 This file defines an Env class that has a static API_KEY property that you must replace with your own API key.
+
+***
+
+## Run server
+
+```bash
+$ npm i
+```
+
+```bash
+$ ng serve --o
+```

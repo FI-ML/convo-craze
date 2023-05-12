@@ -46,13 +46,14 @@ export class QuestionComponent {
 
     if (prompt.length <= this.maxLength) {
       this.loading = true;
-      this.gptService.sendRequest(prompt, this.maxLength).then(answer => {
-        this.dataService.updateData(answer);
-        this.loading = false;
-      }).catch(err => {
-        this.loading = false;
-      });
-
+      /*  this.gptService.sendRequest(prompt, this.maxLength).then(answer => {
+          this.dataService.updateData(answer);
+          this.loading = false;
+        }).catch(err => {
+          this.loading = false;
+        });*/
+      this.dataService.updateData('Ich bin eine antwort')
+      this.loading = false;
       this.questionControl.setValue('');
     }
   }
