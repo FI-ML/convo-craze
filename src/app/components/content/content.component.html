@@ -17,10 +17,15 @@
             </div>
           </div>
         </mat-toolbar>
-        <div id="answer" class="flex flex-col flex-grow p-4 space-y-4 w-4/5 mx-auto ">
-          <app-answer
-            [formGroup]="formGroup">
-          </app-answer>
+        <div id="answer" class="flex flex-col flex-grow p-4 space-y-4 w-4/5 mx-auto">
+          <ng-container formArrayName="answers">
+            <ng-container *ngFor="let answerControl of answers.controls; let index = index">
+              <app-answer
+                class="w-2/3"
+                [answer]="answerControl.value">
+              </app-answer>
+            </ng-container>
+          </ng-container>
         </div>
       </div>
 
