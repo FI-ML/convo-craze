@@ -1,5 +1,5 @@
 <div id="question" class="flex-grow">
-  <mat-form-field appearance="outline" class="w-full">
+  <mat-form-field appearance="outline" class="w-full pt-1 px-1">
     <mat-icon matPrefix svgIcon="chat"></mat-icon> <!-- left icon -->
     <mat-icon id="send" matSuffix svgIcon="send" (click)="sendQuestion()" *ngIf="!loading"></mat-icon>
     <mat-icon id="loading" matSuffix svgIcon="loading" (click)="sendQuestion()" *ngIf="loading"></mat-icon>
