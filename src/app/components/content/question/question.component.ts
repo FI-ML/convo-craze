@@ -53,8 +53,10 @@ export class QuestionComponent {
     this.gptService.sendRequest(prompt, this.maxLength).then(answer => {
       this.dataService.setAnswer(answer);
       this.loading = false;
+      this.questionControl.enable();
     }).catch(() => {
       this.loading = false;
+      this.questionControl.enable();
 
     });
   }
