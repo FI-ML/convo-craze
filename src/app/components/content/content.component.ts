@@ -14,7 +14,6 @@ import {DataService} from "../../service/data/data.service";
   styleUrls: ['./content.component.scss']
 })
 
-//TODO: FORM CONTROL ARRAY
 export class ContentComponent implements OnInit, OnDestroy {
   @Input() sidenav!: MatSidenav;
 
@@ -53,7 +52,7 @@ export class ContentComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe(question => {
         this.addQuestion(question);
-      })
+      });
   }
 
   ngOnDestroy() {
@@ -96,6 +95,6 @@ export class ContentComponent implements OnInit, OnDestroy {
       value: question,
       disabled: false
     }, []);
-    this.answers.push(answerGroup);
+    this.questions.push(answerGroup);
   }
 }

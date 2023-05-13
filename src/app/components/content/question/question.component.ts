@@ -46,15 +46,18 @@ export class QuestionComponent {
     const prompt = this.questionControl.value;
 
     if (prompt.length <= this.maxLength) {
-      this.dataService.setQuestion(prompt);
       this.loading = true;
 
-      this.gptService.sendRequest(prompt, this.maxLength).then(answer => {
+      /*this.gptService.sendRequest(prompt, this.maxLength).then(answer => {
         this.dataService.setAnswer(answer);
         this.loading = false;
       }).catch(err => {
         this.loading = false;
-      });
+      });*/
+
+      this.dataService.setAnswer(' Im a answer \n'.repeat(30));
+      this.dataService.setQuestion('Im a question \n'.repeat(35));
+      this.questionControl.setValue('');
     }
   }
 }

@@ -17,35 +17,49 @@
             </div>
           </div>
         </mat-toolbar>
-        <div id="answer" class="flex flex-col flex-grow p-4 space-y-4 w-4/5 mx-auto">
-          <ng-container formArrayName="answers">
-            <ng-container *ngFor="let answerControl of answers.controls; let index = index">
-              <app-answer
-                class="w-2/3"
-                [answer]="answerControl.value">
-              </app-answer>
-            </ng-container>
-          </ng-container>
+
+        <div id="messages"
+             class="flex flex-col space-y-4 p-3 overflow-y-auto">
 
           <ng-container formArrayName="questions">
             <ng-container *ngFor="let questionControl of questions.controls; let index = index">
-              <mat-card>
-                {{questionControl.value}}
-              </mat-card>
+              <div class="chat-message">
+                <div class="flex items-end justify-end">
+                  <div class="flex flex-col spacy-y-2 items-end">
+                    <mat-card class="w-4/5">
+                      <span class="bg-sky-400 p-2">{{questionControl.value}}</span>
+                    </mat-card>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </ng-container>
+
+          <ng-container formArrayName="answers">
+            <ng-container *ngFor="let answerControl of answers.controls; let index = index">
+              <div class="chat-message">
+                <div class="flex items-end">
+                  <div class="flex flex-col spacy-y-2 items-start">
+                    <mat-card class="w-4/5">
+                      <span class="m-1">{{answers.controls[index].value}}</span>
+                    </mat-card>
+                  </div>
+                </div>
+              </div>
             </ng-container>
           </ng-container>
         </div>
       </div>
+    </div>
 
 
-      <div id="question" class="w-4/5 mx-auto ml-14 mb-4 fixed bottom-0">
-        <mat-card class="drop-shadow-2xl">
-          <app-question class="mx-1 my-2"
-                        [formGroup]="formGroup"
-                        [maxLength]="maxLength">
-          </app-question>
-        </mat-card>
-      </div>
+    <div id="question" class="w-4/5 mx-auto ml-14 mb-4 fixed bottom-0">
+      <mat-card class="drop-shadow-2xl">
+        <app-question class="mx-1 my-2"
+                      [formGroup]="formGroup"
+                      [maxLength]="maxLength">
+        </app-question>
+      </mat-card>
     </div>
   </div>
 </form>
