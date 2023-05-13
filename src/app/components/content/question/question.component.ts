@@ -43,21 +43,19 @@ export class QuestionComponent {
 
 
   sendQuestion(): void {
+    this.loading = true;
     const prompt = this.questionControl.value;
 
-    if (prompt.length <= this.maxLength) {
-      this.loading = true;
+    this.questionControl.setValue('');
+    this.questionControl.disable();
+    this.dataService.setQuestion(prompt);
 
-      this.dataService.setQuestion(prompt);
+    this.gptService.sendRequest(prompt, this.maxLength).then(answer => {
+      this.dataService.setAnswer(answer);
+      this.loading = false;
+    }).catch(() => {
+      this.loading = false;
 
-      this.gptService.sendRequest(prompt, this.maxLength).then(answer => {
-        this.dataService.setAnswer(answer);
-        this.loading = false;
-      }).catch(err => {
-        this.loading = false;
-      });
-      
-      this.questionControl.setValue('');
-    }
+    });
   }
 }
