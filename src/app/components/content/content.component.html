@@ -21,33 +21,45 @@
         <div id="messages"
              class="flex flex-col space-y-4 p-3 overflow-y-auto">
 
-          <ng-container formArrayName="answers">
-            <ng-container *ngFor="let answerControl of answers.controls; let index = index">
-              <div class="chat-message" *ngIf="answerControl.value.length > 0">
-                <div class="flex items-end">
-                  <div class="flex flex-col spacy-y-2 items-start">
+          <ng-container formArrayName="questions">
+            <ng-container *ngFor="let questionControl of questions.controls; let index = index">
+
+              <div class="chat-question" *ngIf="questionControl.value.length > 0">
+                <div class="flex items-end justify-end">
+                  <div class="flex flex-col spacy-y-2 items-end">
                     <mat-card class="w-4/5">
-                      <span class="p-2">{{answerControl.value}}</span>
+                      <span class="rounded-lg p-2 text-white font-semibold bg-sky-400">{{questionControl.value}}</span>
                     </mat-card>
                   </div>
                 </div>
+
+                <div class="chat-answer mt-5" *ngIf="answers.controls[index].value.length > 0">
+                  <div class="flex items-end">
+                    <div class="flex flex-col spacy-y-2 items-start">
+                      <mat-card class="w-4/5">
+                        <span class="p-2 font-semibold">{{answers.controls[index].value}}</span>
+                      </mat-card>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </ng-container>
           </ng-container>
 
-          <ng-container formArrayName="questions">
-            <ng-container *ngFor="let questionControl of questions.controls; let index = index">
-              <div class="chat-message" *ngIf="questionControl.value.length > 0">
-                <div class="flex items-end justify-end">
-                  <div class="flex flex-col spacy-y-2 items-end">
+          <!--<ng-container formArrayName="answers">
+            <ng-container *ngFor="let answerControl of answers.controls; let index = index">
+              <div class="chat-message" *ngIf="answerControl.value.length > 0 && index % 2 === 0">
+                <div class="flex items-end">
+                  <div class="flex flex-col spacy-y-2 items-start">
                     <mat-card class="w-4/5">
-                      <span class="rounded-lg p-2 bg-sky-400">{{questionControl.value}}</span>
+                      <span class="p-2 font-semibold">{{answerControl.value}}</span>
                     </mat-card>
                   </div>
                 </div>
               </div>
             </ng-container>
-          </ng-container>
+          </ng-container>-->
 
         </div>
       </div>
