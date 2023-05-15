@@ -82,6 +82,11 @@ export class ContentComponent implements OnInit, OnDestroy {
     return this.formGroup.get("questions") as FormArray
   }
 
+  getAnswer(index: number): string {
+    const answer = this.answers.controls[index].value;
+    return !answer ? '' : answer;
+  }
+
   addAnswer(answer: string) {
     const answerGroup = this.formBuilder.control({
       value: answer,

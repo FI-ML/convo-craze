@@ -19,7 +19,7 @@
         </mat-toolbar>
 
         <div id="messages"
-             class="flex flex-col space-y-4 p-3 overflow-y-auto w-full">
+             class="flex flex-col space-y-4 p-3 overflow-y-auto w-full h-5/6 mb-10">
 
           <ng-container formArrayName="questions">
             <ng-container *ngFor="let questionControl of questions.controls; let index = index">
@@ -27,7 +27,7 @@
               <div class="chat-question" *ngIf="questionControl.value.length > 0">
                 <div class="flex items-end justify-end">
                   <div class="flex flex-col overflow-y-none spacy-y-2 items-end">
-                    <mat-card class="w-full">
+                    <mat-card class="w-5/6">
                       <span
                         class="rounded-lg p-2 text-white font-semi-bold bg-sky-400">{{questionControl?.value}}</span>
                     </mat-card>
@@ -38,7 +38,7 @@
                   <div class="flex items-end">
                     <div class="flex flex-col overflow-y-none spacy-y-2 items-start">
                       <mat-card class="w-4/5">
-                        <span class="p-2 font-semi-bold">{{answers.controls[index]?.value}}</span>
+                        <span class="p-2 font-semi-bold">{{getAnswer(index)}}</span>
                       </mat-card>
                     </div>
                   </div>
