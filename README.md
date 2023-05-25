@@ -27,3 +27,15 @@ $ npm i
 ```bash
 $ ng serve --o
 ```
+
+***
+
+### PWA (progressive web application)
+
+* add the project to your github repository
+
+`````bash
+npm run "deploy": "npx gh-pages -d dist/convo-craze"
+`````
+
+* open your repository an show in environments

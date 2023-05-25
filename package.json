@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "start-pwa": "ng build && http-server -p 8080 -c-1 dist/convo-craze",
+    "predeploy": "ng build --base-href=/convo-craze/",
+    "deploy": "npx gh-pages -d dist/convo-craze"
   },
   "private": true,
   "dependencies": {
@@ -20,17 +23,21 @@
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
+    "@angular/service-worker": "^15.2.0",
     "@ngneat/tailwind": "^7.0.3",
     "@ngrx/store": "^15.4.0",
+    "openai": "^3.2.1",
+    "rimraf": "^5.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^15.2.6",
+    "@angular-devkit/build-angular": "^15.2.8",
     "@angular/cli": "~15.2.6",
     "@angular/compiler-cli": "^15.2.0",
     "@types/jasmine": "~4.3.0",
+    "gh-pages": "^5.0.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
