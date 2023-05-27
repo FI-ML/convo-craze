@@ -1,0 +1,101 @@
+{
+  "configVersion": 1,
+  "timestamp": 1685183951647,
+  "index": "/convo-craze/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/convo-craze/favicon.ico",
+        "/convo-craze/index.html",
+        "/convo-craze/main.f9ccf434e28884f2.js",
+        "/convo-craze/manifest.webmanifest",
+        "/convo-craze/polyfills.57a21ffec27c6c8d.js",
+        "/convo-craze/runtime.cedf45388b2a4972.js",
+        "/convo-craze/styles.c0ae05ef3ed3c309.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/convo-craze/assets/icons/add.svg",
+        "/convo-craze/assets/icons/chat.svg",
+        "/convo-craze/assets/icons/copy.svg",
+        "/convo-craze/assets/icons/icon-128x128.png",
+        "/convo-craze/assets/icons/icon-144x144.png",
+        "/convo-craze/assets/icons/icon-152x152.png",
+        "/convo-craze/assets/icons/icon-192x192.png",
+        "/convo-craze/assets/icons/icon-384x384.png",
+        "/convo-craze/assets/icons/icon-512x512.png",
+        "/convo-craze/assets/icons/icon-72x72.png",
+        "/convo-craze/assets/icons/icon-96x96.png",
+        "/convo-craze/assets/icons/link.svg",
+        "/convo-craze/assets/icons/loader.svg",
+        "/convo-craze/assets/icons/menu.svg",
+        "/convo-craze/assets/icons/row-left.svg",
+        "/convo-craze/assets/icons/row-right.svg",
+        "/convo-craze/assets/icons/send.svg",
+        "/convo-craze/assets/icons/tick.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/convo-craze/assets/icons/add.svg": "a269000d0ff0e61cf8af59bd6251f06b5c120b3f",
+    "/convo-craze/assets/icons/chat.svg": "64ca13ff059d34d8591479b4bd82a3d2866a1569",
+    "/convo-craze/assets/icons/copy.svg": "d1eabbf5f9cae99376d07a684bc235e9a312614c",
+    "/convo-craze/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/convo-craze/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/convo-craze/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/convo-craze/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/convo-craze/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/convo-craze/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/convo-craze/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/convo-craze/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/convo-craze/assets/icons/link.svg": "26e1a33bbb5f0e4d6c7ad9fa28c0360be6cf5da9",
+    "/convo-craze/assets/icons/loader.svg": "e1894ecd11e4bf3e233202e7e7398c1d7691bf60",
+    "/convo-craze/assets/icons/menu.svg": "441f82efc59277dfc1553e6166f4df8e5105a53a",
+    "/convo-craze/assets/icons/row-left.svg": "22b67a6742be81437015b68e167e4dba6236a72d",
+    "/convo-craze/assets/icons/row-right.svg": "adbc9dd16cd2b908a2fe7820ef65b6d1a70c06e7",
+    "/convo-craze/assets/icons/send.svg": "40a3abb80254fd578ec4e5d468517aa028da4e22",
+    "/convo-craze/assets/icons/tick.svg": "6fd59d4b32cee08f060f71f85785573577779174",
+    "/convo-craze/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/convo-craze/index.html": "f4548019049700b7cb38d2ebf5276e662c3c07e5",
+    "/convo-craze/main.f9ccf434e28884f2.js": "013a88e3a62346d05f108d729ea45e5dc9300799",
+    "/convo-craze/manifest.webmanifest": "54f7a810b83bc94f131d1c2b44bda41b26364782",
+    "/convo-craze/polyfills.57a21ffec27c6c8d.js": "8ba3a4ffc2f8820a28c615d7abf58b172edaa72f",
+    "/convo-craze/runtime.cedf45388b2a4972.js": "ef102333e182d2bdeb2e9eea20deafc813de9895",
+    "/convo-craze/styles.c0ae05ef3ed3c309.css": "0c764a2e8d954ee3f947199f8609446a1473ea0f"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
