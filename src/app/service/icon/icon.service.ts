@@ -5,61 +5,52 @@ import {Injectable} from '@angular/core';
 })
 export class IconService {
 
-  constructor() {
-  }
-
-
   getIcons(): Array<any> {
-    const icons = [
+    return [
       {
         iconName: 'copy',
-        iconPath: '../assets/copy.svg',
-      },
-      {
-        iconName: 'grid',
-        iconPath: '../assets/grid.svg',
+        iconPath: '../assets/icons/copy.svg',
       },
       {
         iconName: 'link',
-        iconPath: '../assets/link.svg',
+        iconPath: '../assets/icons/link.svg',
       },
       {
         iconName: 'loader',
-        iconPath: '../assets/loader.svg',
+        iconPath: '../assets/icons/loader.svg',
       },
       {
         iconName: 'tick',
-        iconPath: '../assets/tick.svg',
+        iconPath: '../assets/icons/tick.svg',
       },
       {
         iconName: 'chat',
-        iconPath: '../assets/chat.svg',
+        iconPath: '../assets/icons/chat.svg',
       },
       {
         iconName: 'send',
-        iconPath: '../assets/send.svg',
+        iconPath: '../assets/icons/send.svg',
       },
       {
         iconName: 'add',
-        iconPath: '../assets/add.svg',
+        iconPath: '../assets/icons/add.svg',
       },
       {
         iconName: 'menu',
-        iconPath: '../assets/menu.svg',
+        iconPath: '../assets/icons/menu.svg',
       },
       {
         iconName: 'row-right',
-        iconPath: '../assets/row-right.svg',
+        iconPath: '../assets/icons/row-right.svg',
       },
       {
         iconName: 'row-left',
-        iconPath: '../assets/row-left.svg',
+        iconPath: '../assets/icons/row-left.svg',
       },
       {
         iconName: 'loading',
-        iconPath: '../assets/loader.svg',
+        iconPath: '../assets/icons/loader.svg',
       },
     ];
-    return icons;
   }
 }
